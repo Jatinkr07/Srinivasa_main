@@ -1,0 +1,39 @@
+/* src/Carousel.css */
+.carousel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.carousel-images {
+  position: relative;
+  width: 600px; /* Set a fixed width for the carousel */
+  height: 400px; /* Set a fixed height for the carousel */
+  overflow: hidden; /* Hide overflow to create a sliding effect */
+  object-fit: contain;
+}
+
+.carousel img {
+  position: absolute;
+  width: 100%;
+  height: 20rem ;
+  transition: transform 0.5s ease; /* Add transition for sliding effect */
+}
+
+.carousel img.inactive {
+  transform: translateX(
+    100%
+  ); /* Move inactive images out of view to the right */
+}
+
+.carousel img.active {
+  transform: translateX(0); /* Active image is in the center */
+}
+
+@media screen and (max-width:768px) {
+    .carousel-images{
+        height: 10rem;
+        width: 20rem;
+        object-fit: fill;
+    }
+}
